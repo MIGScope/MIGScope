@@ -62,41 +62,7 @@ __device__ unsigned long calculate_L2tlb_index(unsigned long *ptr) {
 
 
 
-// //2MB頁面的hash索引計算
-// //计算L3 tlb索引
-// __device__ unsigned long calculate_L3tlb_index(unsigned long *ptr) {
-//     unsigned long addr = (unsigned long)ptr;
-//     unsigned long index = 0;
 
-//     // 按位异或计算 TLB 索引
-//     index |= ((addr >> 26) & 1) ^ ((addr >> 34) & 1) ^ ((addr >> 42) & 1); // 第1位
-//     index |= (((addr >> 27) & 1) ^ ((addr >> 35) & 1) ^ ((addr >> 43) & 1)) << 1; // 第2位
-//     index |= (((addr >> 28) & 1) ^ ((addr >> 36) & 1) ^ ((addr >> 44) & 1)) << 2; // 第3位
-//     index |= (((addr >> 29) & 1) ^ ((addr >> 37) & 1) ^ ((addr >> 45) & 1)) << 3; // 第4位
-//     index |= (((addr >> 30) & 1) ^ ((addr >> 38) & 1) ^ ((addr >> 46) & 1)) << 4; // 第5位
-//     index |= (((addr >> 31) & 1) ^ ((addr >> 39) & 1) ^ ((addr >> 47) & 1))  << 5; // 第6位
-//     index |= (((addr >> 32) & 1) ^ ((addr >> 40) & 1)) << 6; // 第7位
-//     index |= (((addr >> 33) & 1) ^ ((addr >> 41) & 1)) << 7; // 第8位
-
-//     return index; // 返回计算得到的 TLB 索引值
-// }
-
-// //计算L2 tlb索引
-// __device__ unsigned long calculate_L2tlb_index(unsigned long *ptr) {
-//     unsigned long addr = (unsigned long)ptr;
-//     unsigned long index = 0;
-
-//     // 计算 TLB 索引，每个位按要求进行异或计算
-//     index |= (((addr >> 26) & 1) ^ ((addr >> 33) & 1) ^ ((addr >> 40) & 1)^ ((addr >> 47) & 1));       // 第1位
-//     index |= (((addr >> 27) & 1) ^ ((addr >> 34) & 1)^ ((addr >> 41) & 1)) << 1;                        // 第2位
-//     index |= (((addr >> 28) & 1) ^ ((addr >> 35) & 1)^ ((addr >> 42) & 1)) << 2;                        // 第3位
-//     index |= (((addr >> 29) & 1) ^ ((addr >> 36) & 1)^ ((addr >> 43) & 1)) << 3;                        // 第4位
-//     index |= (((addr >> 30) & 1) ^ ((addr >> 37) & 1)^ ((addr >> 44) & 1)) << 4;                        // 第5位
-//     index |= (((addr >> 31) & 1) ^ ((addr >> 38) & 1)^ ((addr >> 45) & 1)) << 5;                        // 第6位
-//     index |= (((addr >> 32) & 1) ^ ((addr >> 39) & 1)^ ((addr >> 46) & 1)) << 6;                        // 第7位
-
-//     return index; // 返回计算得到的 TLB 索引值
-// }
 
 // 初始化数组的函数
 __device__ __managed__ unsigned long d_thread_entry[THREADS];//入口数组
