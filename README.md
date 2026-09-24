@@ -31,9 +31,9 @@ scan.cu \
 Before running the program, make sure that the GPU environment is properly
 configured and the target GPU is available.
 Execute the compiled binary:
-
+```bash
 ./scan
-
+```
 The collected TLB access traces are saved in:
 
 result/result.csv
@@ -45,9 +45,9 @@ result/result.csv
 The trace visualization script converts the collected CSV trace into a binary image for analysis.
 
 Run:
-
+```bash
 python draw_trace.py
-
+```
 The script reads result/result.csv, generates the visualization image.
 
 
