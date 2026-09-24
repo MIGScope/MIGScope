@@ -38,9 +38,9 @@ The collected TLB access traces are saved in:
 
 result/result.csv
 
-```
 
-##Trace Visualization
+
+## Trace Visualization
 
 The trace visualization script converts the collected CSV trace into a binary image for analysis.
 
