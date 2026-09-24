@@ -33,3 +33,21 @@ configured and the target GPU is available.
 Execute the compiled binary:
 
 ./scan
+
+The collected TLB access traces are saved in:
+
+result/result.csv
+
+```
+
+##Trace Visualization
+
+The trace visualization script converts the collected CSV trace into a binary image for analysis.
+
+Run:
+
+python draw_trace.py
+
+The script reads result/result.csv, generates the visualization image.
+
+
