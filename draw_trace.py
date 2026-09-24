@@ -53,4 +53,4 @@ if __name__ == "__main__":
     #draw_image_from_csv("result/result.csv", "result.png", mode="imshow")
 
     # scatter 模式，方块大小为 2
-    draw_image_from_csv("result/result.csv", "vgg16_LONG.png", mode="scatter", point_size=0.1)
+    draw_image_from_csv("result/result.csv", "vgg16.png", mode="scatter", point_size=0.1)
